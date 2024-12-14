@@ -1,0 +1,23 @@
+.normal{
+    background-color: white;
+    width: 130px;
+    padding: 14px 18px;
+    border-radius: 15px;
+    position: absolute;
+    top: 157px;
+    left: 64px;
+}
+
+.AmountOfWater{
+    font-weight: 700;
+    font-size: 15px;
+}
+
+.text{
+    font-weight: 400;
+    font-size: 12px;
+}
+
+.section{
+    padding: 157px 64px;
+}
