@@ -16,7 +16,7 @@ const Cabinet = () => {
 
         <Logotype></Logotype>
         <DayleNorm></DayleNorm>
-        <AddButton sumFunction={setIsOpen}></AddButton>
+        <AddButton setIsOpen={setIsOpen}></AddButton>
         {isOpen && <AddWater></AddWater>}
       </div>
       <div className={s.rightSide}></div>
