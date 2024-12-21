@@ -3,13 +3,12 @@ import s from "./Cabinet.module.css";
 import images from "../../assets";
 import Logotype from "../../components/logo/Logotype";
 import DayleNorm from "../../components/Daylynormal/DayleNorm";
-import AddButton from "../../components/AddWater/AddButton";
+import AddButton from "../../components/AddButton/AddButton";
 import DayleProgressBar from "../../components/Bottle/DayleProgressBar";
-import AddWater from "../../components/AddWater/AddButton";
+import AddWater from "../../components/AddWater/AddWater";
 
 const Cabinet = () => {
-
-  const [isOpen, setIsOpen] = useState(true)
+  const [isOpen, setIsOpen] = useState(false);
   return (
     <div className={s.Section}>
       <div className={s.leftSide}>
@@ -18,7 +17,7 @@ const Cabinet = () => {
         <Logotype></Logotype>
         <DayleNorm></DayleNorm>
         <AddButton></AddButton>
-        <AddWater></AddWater>
+        {isOpen && <AddWater></AddWater>}
       </div>
       <div className={s.rightSide}></div>
     </div>

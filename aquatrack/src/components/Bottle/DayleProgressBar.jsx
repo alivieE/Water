@@ -15,10 +15,10 @@ const DayleProgressBar = ({ percent }) => {
           </div>
         </div>
       </div>
-        <div className={s.percent}>
-          <p>0%</p>
-          <p>100%</p>
-        </div>
+      <div className={s.percent}>
+        <p>0%</p>
+        <p>100%</p>
+      </div>
     </div>
   );
 };
