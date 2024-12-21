@@ -1,30 +1,21 @@
-import React, { useState } from 'react'
+import React, { useState } from "react";
 
-import s from './DayleProgressBar.module.css';
+import s from "./DayleProgressBar.module.css";
 
-const DayleProgressBar = () => {
-
-    const [waterTake, setWaterTake] = useState()
-
-    const handleSliderChange = (e) => {
-        setWaterTake(parseFloat(e.target.value))
-    }
+const DayleProgressBar = ({ percent }) => {
+  console.log(percent);
   return (
     <div className={s.container}>
+      <div className={s.progressBar}>
+        <div style={{ width: percent + "%" }} className={s.progressLine}>
+          {" "}
+          <div className={s.thumb}></div>
+        </div>
+      </div>
 
-    <input
-      type="range"
-      min="0"
-      max="1.5"
-      step="0.1"
-      value={waterTake}
-      onChange={handleSliderChange}      
-      className={s.slider}
-    />
+      <p> L</p>
+    </div>
+  );
+};
 
-    <p>{waterTake} L</p>
-  </div>
-  )
-}
-
-export default DayleProgressBar
+export default DayleProgressBar;

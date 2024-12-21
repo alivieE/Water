@@ -110,7 +110,6 @@ section {
   display: none;
 }
 body {
-  
   font-family: "Poppins", sans-serif;
 }
 menu,
@@ -126,7 +125,7 @@ blockquote:before,
 blockquote:after,
 q:before,
 q:after {
-  content: '';
+  content: "";
   content: none;
 }
 table {
@@ -141,7 +140,7 @@ a {
 img {
   display: block;
 }
-button{
+button {
   cursor: pointer;
 }
 input::-webkit-outer-spin-button,
@@ -150,8 +149,8 @@ input::-webkit-inner-spin-button {
   margin: 0;
 }
 
-.MuiChartsAxisHighlight-root.MuiChartsAxisHighlight-root{
-  stroke-dasharray: 5,5;
+.MuiChartsAxisHighlight-root.MuiChartsAxisHighlight-root {
+  stroke-dasharray: 5, 5;
   stroke: #c1c3cf;
 }
 
@@ -164,10 +163,10 @@ input::-webkit-inner-spin-button {
   }
 }
 
-.MuiResponsiveChart-container{
+.MuiResponsiveChart-container {
   width: auto;
   height: auto;
 }
-.MuiChartsLegend-root.MuiChartsLegend-column.css-nsbw82-MuiChartsLegend-root{
-display: none;
+.MuiChartsLegend-root.MuiChartsLegend-column.css-nsbw82-MuiChartsLegend-root {
+  display: none;
 }
