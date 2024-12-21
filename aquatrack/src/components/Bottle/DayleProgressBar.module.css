@@ -2,6 +2,7 @@
   position: absolute;
   width: 295px;
   padding: 20px;
+  padding-bottom: 20px;
   gap: 52px;
   bottom: 180px;
   left: 50%;
@@ -32,4 +33,28 @@
   top: 50%;
   right: 0;
   transform: translate(50%, -50%);
+}
+
+.percent{
+  display: flex;
+  justify-content: space-between;
+  font-weight: 400;
+  font-size: 12px;
+  color: rgba(47, 47, 47, 0.6);
+}
+
+.percentThumb{
+  position: absolute;
+  color: #9be1a0;
+  font-weight: 400;
+  font-size: 10px;
+  top: -15px;
+  left: 50%;
+  transform: translate(-50%);
+  width: 20px;
+  text-align: center;
+}
+
+.today{
+  padding-bottom: 15px;
 }
