@@ -4,15 +4,16 @@ import images from '../../assets'
 import Logotype from '../../components/logo/Logotype'
 import DayleNorm from '../../components/Daylynormal/DayleNorm'
 import AddWater from '../../components/AddWater/AddWater'
+import DayleProgressBar from '../../components/Bottle/DayleProgressBar'
 
 
 const Cabinet = () => {
   return (
     <div className={s.Section}>
       <div className={s.leftSide}>
-            {/* 
+            
             <DayleProgressBar></DayleProgressBar>
-             */}
+            
             <Logotype></Logotype>    
             <DayleNorm></DayleNorm>     
             <AddWater></AddWater>
