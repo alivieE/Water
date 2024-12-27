@@ -19,7 +19,9 @@ const Cabinet = () => {
         <AddButton setIsOpen={setIsOpen}></AddButton>
         {isOpen && <AddWater></AddWater>}
       </div>
-      <div className={s.rightSide}></div>
+      <div className={s.rightSide}>
+
+      </div>
     </div>
   );
 };
