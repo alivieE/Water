@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import s from './AddWater.module.css';
+import React, { useState } from "react";
+import s from "./AddWater.module.css";
 
 const AddWater = () => {
   const Vwater = 250;
@@ -16,41 +16,31 @@ const AddWater = () => {
   const minus50 = () => {
     setInputValue((prevValue) => prevValue - 50);
   };
-  
+
   return (
     <div className={s.modalWindowOverlay}>
       <div className={s.modal}>
-        
         <div>
           <p className={s.h1Highlighted}>Edit the entered amount of water</p>
           <p className={s.h2Highlighted}>Correct entered data:</p>
-        </div>      
+        </div>
         <div>
           <p>Amount of water:</p>
           <button onClick={minus50}>-</button>
-          <p onChange={handleInputChange} >{inputValue} ml</p>
+          <p onChange={handleInputChange}>{inputValue} ml</p>
           <button onClick={plus50}>+</button>
         </div>
         <div>
           <p>Recording time:</p>
-          <input 
-              className={s.input}
-              type="time"
-              placeholder="0:00"
-          />
-
-          
+          <input className={s.input} type="datetime-local" placeholder="0:00" />
         </div>
         <div>
           <p className={s.h2Highlighted}>Enter the value of the water used:</p>
-          <input 
-          className={s.input}
-          type="text"
-          placeholder={inputValue}/>
-        </div>   
-      </div>   
+          <input className={s.input} type="text" placeholder={inputValue} />
+        </div>
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default AddWater
+export default AddWater;
