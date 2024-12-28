@@ -35,7 +35,7 @@ const AddWater = () => {
           <p>Recording time:</p>
           <input 
               className={s.input}
-              type="number"
+              type="time"
               placeholder="0:00"
           />
 
