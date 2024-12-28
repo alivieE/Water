@@ -1,42 +1,64 @@
 import React, { useState } from "react";
 import s from "./AddWater.module.css";
+import Image from '../../assets/index'
 
-const AddWater = () => {
-  const Vwater = 250;
-  const [inputValue, setInputValue] = useState(Vwater);
+const AddWater = () => {  
+  const [waterAmount, setWaterAmount] = useState(250);
+  const [actionDate, setActionDate] = useState("");
+
+  const handleInputDate = (event) => {
+    setActionDate(event.target.value)
+  }
 
   const handleInputChange = (event) => {
-    setInputValue(event.target.value);
+    const value = Number(event.target.value)    
+      if ( value > 5000){
+        setWaterAmount(5000)
+      }
+      else if (value < 50) {
+        setWaterAmount(50)
+      }
+      else {
+        setWaterAmount(value)
+      }
   };
 
-  const plus50 = () => {
-    setInputValue((prevValue) => prevValue + 50);
+  const incramentWater = () => {
+    setWaterAmount((prevValue) => prevValue + 50 >5000 ? 5000 : prevValue + 50);
   };
 
-  const minus50 = () => {
-    setInputValue((prevValue) => prevValue - 50);
+  const decramentWater = () => {
+    setWaterAmount((prevValue) =>  prevValue - 50 < 50 ? 50 : prevValue - 50);
   };
+
+  
+  
 
   return (
     <div className={s.modalWindowOverlay}>
       <div className={s.modal}>
         <div>
-          <p className={s.h1Highlighted}>Edit the entered amount of water</p>
-          <p className={s.h2Highlighted}>Correct entered data:</p>
+          <p className={s.title}>Edit the entered amount of water</p>
+          <p className={s.subTitle}>Correct entered data:</p>
         </div>
-        <div>
-          <p>Amount of water:</p>
-          <button onClick={minus50}>-</button>
-          <p onChange={handleInputChange}>{inputValue} ml</p>
-          <button onClick={plus50}>+</button>
+        <div className={s.AmountBlock}>      
+          <p>Amount fo water</p>   
+          <div className={s.controlsWrap}>
+            <button onClick={decramentWater} className={s.amountChangeButton}><img src={Image.minus}/></button>          
+            <p className={s.inputWrap}>{waterAmount} ml</p>
+            <button onClick={incramentWater} className={s.amountChangeButton}><img src={Image.plus}/></button>
+          </div> 
         </div>
-        <div>
+        <div className={s.TimeBlock}>
           <p>Recording time:</p>
-          <input className={s.input} type="datetime-local" placeholder="0:00" />
+          <input className={s.input} type="datetime-local"  onChange={handleInputDate} value={actionDate} />
         </div>
         <div>
-          <p className={s.h2Highlighted}>Enter the value of the water used:</p>
-          <input className={s.input} type="text" placeholder={inputValue} />
+          <p className={s.subTitle}>Enter the value of the water used:</p>
+          <input className={s.input} type="number" value={waterAmount} onChange={handleInputChange} max="5000" min={'50'}/>
+        </div>
+        <div>
+          <button className={s.SaveButton}>Save</button>
         </div>
       </div>
     </div>
