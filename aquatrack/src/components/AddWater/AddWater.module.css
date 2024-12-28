@@ -1,90 +1,98 @@
-.modalWindowOverlay{
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 1000;
-    
+.modalWindowOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
 }
 
-.modal{
-    background: white;
-    border-radius: 15px;
-    gap: 24px;
-    padding: 40px;
-    width: 518px; 
-    color: #323F47;
-    text-align: center;
-    font-family: "Poppins", sans-serif;    
+.modal {
+  background: white;
+  border-radius: 15px;
+  gap: 24px;
+  padding: 40px;
+  width: 518px;
+  color: #323f47;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
 }
 
-.title{
-    color: #323F47;
-    font-weight: 700;
-    font-size: 28px;
-    text-align: left;
+.title {
+  color: #323f47;
+  font-weight: 700;
+  font-size: 28px;
+  text-align: left;
+  line-height: 32px;
+  margin-bottom: 24px;
 }
 
-.subTitle{
-    color: #323F47;
-    font-weight: 700;
-    font-size: 18px;
-    text-align: left;
+.subTitle {
+  color: #323f47;
+  font-weight: 700;
+  font-size: 18px;
+  text-align: left;
+  margin-bottom: 20px;
 }
 
-.input{
-    border: 1px solid rgba(47, 47, 47, 0.15);
-    border-radius: 15px;
-    padding: 16px 390px 16px 16px;
-    width: 8%;
+.input {
+  border: 1px solid rgba(47, 47, 47, 0.15);
+  border-radius: 15px;
+  padding: 16px 390px 16px 16px;
+  width: 8%;
 }
 
-.amountChangeButton{
-    background: none;
+.amountChangeButton {
+  background: none;
 }
 
-.controlsWrap{
-    display: flex;
-    gap: 8px;
-    
+.controlsWrap {
+  display: flex;
+  gap: 8px;
 }
 
-.inputWrap{
-    background-color: #323F47;
-    width: 92px;
-    padding: 11px 20px;
-    color: white;
-    font-weight: 700;
-    font-size: 15px;
-    border-radius: 30px;
+.inputWrap {
+  background-color: #323f47;
+  width: 92px;
+  padding: 11px 20px;
+  color: white;
+  font-weight: 700;
+  font-size: 15px;
+  border-radius: 30px;
 }
 
-.AmountBlock{
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    align-items: flex-start;    
+.AmountBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: flex-start;
+  margin-bottom: 16px;
 }
 
-.TimeBlock{
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    align-items: flex-start;  
+.TimeBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: flex-start;
 }
 
-.SaveButton{
-    background-color: rgb(155, 225, 160);
-    width: 141px;
-    height: 60px;
-    border: none;
-    border-radius: 30px;
-    font-weight: 700;
-    font-size: 16px;
-    padding: 18px 50px;
+.SaveButton {
+  background-color: rgb(155, 225, 160);
+  width: 141px;
+  height: 60px;
+  border: none;
+  border-radius: 30px;
+  font-weight: 700;
+  font-size: 16px;
+  padding: 18px 50px;
+  margin-top: 24px;
+  text-align: left;
+  display: block;
+}
+.inputBlock {
+  margin-top: 24px;
 }
