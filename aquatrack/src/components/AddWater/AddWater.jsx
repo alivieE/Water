@@ -57,6 +57,7 @@ const AddWater = () => {
             type="datetime-local"
             onChange={handleInputDate}
             value={actionDate}
+            placeholder="Pick date.."
           />
         </div>
         <div className={s.inputBlock}>
