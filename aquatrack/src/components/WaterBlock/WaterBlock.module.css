@@ -1,0 +1,23 @@
+.text{
+    font-weight: 700;
+    font-size: 28px;
+    color: #323F47;
+}
+
+.plusImg{
+    background-color: #9BE1A0;
+    border-radius: 30px;
+}
+
+.actionList{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.addWater{
+    width: 124px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

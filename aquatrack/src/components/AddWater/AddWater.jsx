@@ -46,7 +46,7 @@ const AddWater = ({ setIsOpen }) => {
             </button>
             <p className={s.inputWrap}>{waterAmount} ml</p>
             <button onClick={incramentWater} className={s.amountChangeButton}>
-              <img src={Image.plus} />
+              <img src={Image.addWaterPlus} />
             </button>
           </div>
         </div>

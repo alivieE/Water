@@ -6,6 +6,8 @@ import DayleNorm from "../../components/Daylynormal/DayleNorm";
 import AddButton from "../../components/AddButton/AddButton";
 import DayleProgressBar from "../../components/Bottle/DayleProgressBar";
 import AddWater from "../../components/AddWater/AddWater";
+import User from "../../components/User/User";
+import WaterBlock from "../../components/WaterBlock/WaterBlock";
 
 const Cabinet = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -20,7 +22,9 @@ const Cabinet = () => {
         {isOpen && <AddWater setIsOpen={setIsOpen}></AddWater>}
       </div>
       <div className={s.rightSide}>
-
+            <p>Hello<span>, Nadia</span></p>
+            <User></User>
+            <WaterBlock></WaterBlock>
       </div>
     </div>
   );

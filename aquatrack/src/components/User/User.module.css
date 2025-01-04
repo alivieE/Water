@@ -1,0 +1,26 @@
+.userBlock{
+    position: relative;
+    display: flex;
+    align-items: center;
+    max-width: 200px;
+    background-color: #323F47;
+    border-radius: 30px;
+    padding: 6px 15px;
+    height: 56px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.photo{
+    width: 44px;
+    height: 44px;
+    background-color: red;
+    border-radius: 30px;
+    margin: 10px;
+}
+
+.name{
+    color: white;
+    font-weight: 700;
+    font-size: 24px;
+}
