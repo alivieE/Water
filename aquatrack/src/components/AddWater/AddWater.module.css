@@ -112,21 +112,19 @@
   margin-top: 24px;
 }
 
-
-.closeModal{
+.closeModal {
   position: relative;
   width: 100%;
 }
 
-.close{
+.close {
   background-color: transparent;
   position: absolute;
-  top: 7px;
-  right: 7px;
-  width: 14px;
+  top: 22px;
+  right: 22px;
   display: block;
 }
 
-.img{
+.img {
   display: block;
 }

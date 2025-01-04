@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import s from "./AddWater.module.css";
 import Image from "../../assets/index";
 
-const AddWater = ({setIsOpen}) => {
+const AddWater = ({ setIsOpen }) => {
   const [waterAmount, setWaterAmount] = useState(250);
   const [actionDate, setActionDate] = useState("");
 
@@ -34,16 +34,6 @@ const AddWater = ({setIsOpen}) => {
   return (
     <div className={s.modalWindowOverlay}>
       <div className={s.modal}>
-            <div className={s.closeModal}>
-                <button
-                    className={s.close}
-                    onClick={() => {
-                      setIsOpen(false);
-                    }}
-                  >
-                    <img className={s.img} src={Image.close}/>
-                  </button>
-            </div>
         <div>
           <p className={s.title}>Edit the entered amount of water</p>
           <p className={s.subTitle}>Correct entered data:</p>
@@ -83,9 +73,16 @@ const AddWater = ({setIsOpen}) => {
         </div>
 
         <button className={s.SaveButton}>Save</button>
-          
-          
-       </div> 
+
+        <button
+          className={s.close}
+          onClick={() => {
+            setIsOpen(false);
+          }}
+        >
+          <img className={s.img} src={Image.close} />
+        </button>
+      </div>
     </div>
   );
 };
