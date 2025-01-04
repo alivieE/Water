@@ -12,6 +12,7 @@
 }
 
 .modal {
+  position: relative;
   background: white;
   border-radius: 15px;
   gap: 24px;
@@ -109,4 +110,23 @@
 }
 .inputBlock {
   margin-top: 24px;
+}
+
+
+.closeModal{
+  position: relative;
+  width: 100%;
+}
+
+.close{
+  background-color: transparent;
+  position: absolute;
+  top: 7px;
+  right: 7px;
+  width: 14px;
+  display: block;
+}
+
+.img{
+  display: block;
 }
