@@ -21,6 +21,8 @@ const AddWater = ({ setIsOpen }) => {
     }
   };
 
+  // const handlesubmit
+
   const incramentWater = () => {
     setWaterAmount((prevValue) =>
       prevValue + 50 > 5000 ? 5000 : prevValue + 50
@@ -75,6 +77,7 @@ const AddWater = ({ setIsOpen }) => {
         <button className={s.SaveButton}>Save</button>
 
         <button
+          
           className={s.close}
           onClick={() => {
             setIsOpen(false);

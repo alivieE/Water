@@ -23,7 +23,7 @@ const Cabinet = () => {
       </div>
       <div className={s.rightSide}>
             <p>Hello<span>, Nadia</span></p>
-            <User></User>
+            <User className={s.user}></User>
             <WaterBlock></WaterBlock>
       </div>
     </div>

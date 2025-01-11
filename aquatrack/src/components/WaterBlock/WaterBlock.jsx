@@ -7,14 +7,81 @@ const WaterBlock = () => {
     <div>
       <div className={s.actionList}>
         <p className={s.text}>Today</p>
-        <div>
-            <button className={s.addWater}>
+        <div className={s.addWater}>
+            <button className={s.addWaterWrap}>
                 <img className={s.plusImg} src={Image.addButtonplus}/>
-                <p>Add water</p>
+                <p className={s.textLocal}>Add water</p>
             </button>            
         </div>
       </div>
-      <div></div>
+      <div className={s.Block}>
+          <div className={s.miniBlocks}>
+            <img className={s.glassImg} src={Image.glass}/>
+            <div className={s.textTimaAndMl}>
+              <p className={s.textML}>250 ml</p>
+              <p className={s.textTime}>7:00 AM</p>
+            </div>
+            <div className={s.imges}>
+              <img src={Image.change}/>
+              <img src={Image.trash}/>
+            </div>
+          </div>
+          <div className={s.miniBlocks}>
+            <img className={s.glassImg} src={Image.glass}/>
+            <div className={s.textTimaAndMl}>
+              <p className={s.textML}>250 ml</p>
+              <p className={s.textTime}>7:00 AM</p>
+            </div>
+            <div className={s.imges}>
+              <img src={Image.change}/>
+              <img src={Image.trash}/>
+            </div>
+          </div>
+          <div className={s.miniBlocks}>
+            <img className={s.glassImg} src={Image.glass}/>
+            <div className={s.textTimaAndMl}>
+              <p className={s.textML}>250 ml</p>
+              <p className={s.textTime}>7:00 AM</p>
+            </div>
+            <div className={s.imges}>
+              <img src={Image.change}/>
+              <img src={Image.trash}/>
+            </div>
+          </div>
+          <div className={s.miniBlocks}>
+            <img className={s.glassImg} src={Image.glass}/>
+            <div className={s.textTimaAndMl}>
+              <p className={s.textML}>250 ml</p>
+              <p className={s.textTime}>7:00 AM</p>
+            </div>
+            <div className={s.imges}>
+              <img src={Image.change}/>
+              <img src={Image.trash}/>
+            </div>
+          </div>
+          <div className={s.miniBlocks}>
+            <img className={s.glassImg} src={Image.glass}/>
+            <div className={s.textTimaAndMl}>
+              <p className={s.textML}>250 ml</p>
+              <p className={s.textTime}>7:00 AM</p>
+            </div>
+            <div className={s.imges}>
+              <img src={Image.change}/>
+              <img src={Image.trash}/>
+            </div>
+          </div>
+          <div className={s.miniBlocks}>
+            <img className={s.glassImg} src={Image.glass}/>
+            <div className={s.textTimaAndMl}>
+              <p className={s.textML}>250 ml</p>
+              <p className={s.textTime}>7:00 AM</p>
+            </div>
+            <div className={s.imges}>
+              <img src={Image.change}/>
+              <img src={Image.trash}/>
+            </div>
+          </div>
+      </div>
     </div>
   )
 }
