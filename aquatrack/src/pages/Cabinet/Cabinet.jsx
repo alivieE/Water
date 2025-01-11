@@ -24,7 +24,8 @@ const Cabinet = () => {
       <div className={s.rightSide}>
             <p>Hello<span>, Nadia</span></p>
             <User className={s.user}></User>
-            <WaterBlock></WaterBlock>
+            <WaterBlock setIsOpen={setIsOpen}></WaterBlock>
+            {isOpen && <WaterBlock setIsOpen={setIsOpen}></WaterBlock>}
       </div>
     </div>
   );
