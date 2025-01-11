@@ -1,83 +1,85 @@
-.text{
-    font-weight: 700;
-    font-size: 32px;
-    color: #323F47;
+.text {
+  font-weight: 700;
+  font-size: 32px;
+  color: #323f47;
 }
 
-.textLocal{
-    font-weight: 700;
-    font-size: 16px;
-    color: #323F47;
+.textLocal {
+  font-weight: 700;
+  font-size: 16px;
+  color: #323f47;
 }
 
-
-.plusImg{
-    background-color: #9BE1A0;
-    border-radius: 30px;
+.plusImg {
+  background-color: #9be1a0;
+  border-radius: 30px;
 }
 
-.actionList{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 49px;
+.actionList {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 49px;
 }
 
-.addWaterWrap{
-    width: 124px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.addWaterWrap {
+  width: 124px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.Block{
-    display: flex;
-    gap: 16px;
-    justify-content: space-between;
-    overflow-x: scroll;
-    padding: 10px;
+.Block {
+  display: flex;
+  gap: 16px;
+  justify-content: space-between;
+  overflow-x: scroll;
+  padding: 10px;
+  padding-bottom: 32px;
 }
 
-.miniBlocks{
-    width: 192px;
-    background-color: white;
-    display: flex;
-    border-radius: 15px;
-    padding: 20px;
-    gap: 20px;
+.miniBlocks {
+  width: 192px;
+  background-color: white;
+  display: flex;
+  border-radius: 15px;
+  padding: 20px;
+  gap: 20px;
 }
 
-.textML{
-    font-weight: 700;
-    font-size: 15px;
+.textML {
+  font-weight: 700;
+  font-size: 15px;
 }
 
-.textTime{
-    font-weight: 400px;
-    font-size: 12px;
+.textTime {
+  font-weight: 400px;
+  font-size: 12px;
 }
 
-.textTimaAndMl{
-    width: 52px;
+.textTimaAndMl {
+  width: 52px;
 }
-
 
 ::-webkit-scrollbar {
-    height: 8px;
-    width: 8px;
-    
-  }
-  
-  ::-webkit-scrollbar-track {
-    background: #f0f0f5;
-    border-radius: 4px;
-  }
-  
-  ::-webkit-scrollbar-thumb {
-    background: #37424a;
-    border-radius: 4px;
-  }
-  
-  ::-webkit-scrollbar-thumb:hover {
-    background: #2c343a;
-  }
+  height: 8px;
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f0f0f5;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #37424a;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #2c343a;
+}
+.glassImg {
+  width: 32px;
+  height: auto;
+}
