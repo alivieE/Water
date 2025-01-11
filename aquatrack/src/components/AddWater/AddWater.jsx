@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import s from "./AddWater.module.css";
 import Image from "../../assets/index";
 
-const AddWater = ({ setIsOpen }) => {
+const AddWater = ({ setIsOpen, setwaterAction }) => {
   const [waterAmount, setWaterAmount] = useState(250);
   const [actionDate, setActionDate] = useState("");
 
@@ -21,7 +21,17 @@ const AddWater = ({ setIsOpen }) => {
     }
   };
 
-  // const handlesubmit
+  
+  const handleSubmit = (event) => {
+    event.preventDefault()
+    console.log()
+    const actionData = {amount: waterAmount, date: actionDate}
+    setwaterAction( (prev) => {
+      return [...prev,actionData]
+    }) 
+  }
+
+  
 
   const incramentWater = () => {
     setWaterAmount((prevValue) =>
@@ -35,7 +45,7 @@ const AddWater = ({ setIsOpen }) => {
 
   return (
     <div className={s.modalWindowOverlay}>
-      <div className={s.modal}>
+      <form className={s.modal} onSubmit={handleSubmit}>
         <div>
           <p className={s.title}>Edit the entered amount of water</p>
           <p className={s.subTitle}>Correct entered data:</p>
@@ -60,6 +70,7 @@ const AddWater = ({ setIsOpen }) => {
             onChange={handleInputDate}
             value={actionDate}
             placeholder="Pick date.."
+            required
           />
         </div>
         <div className={s.inputBlock}>
@@ -74,7 +85,9 @@ const AddWater = ({ setIsOpen }) => {
           />
         </div>
 
-        <button className={s.SaveButton}>Save</button>
+        <button className={s.SaveButton}
+        type="submit">
+          Save</button>
 
         <button
           
@@ -85,7 +98,7 @@ const AddWater = ({ setIsOpen }) => {
         >
           <img className={s.img} src={Image.close} />
         </button>
-      </div>
+      </form>
     </div>
   );
 };

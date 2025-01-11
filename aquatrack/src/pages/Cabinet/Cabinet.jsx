@@ -11,6 +11,7 @@ import WaterBlock from "../../components/WaterBlock/WaterBlock";
 
 const Cabinet = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [waterActions, setwaterActions] = useState([]);
   return (
     <div className={s.Section}>
       <div className={s.leftSide}>
@@ -19,13 +20,12 @@ const Cabinet = () => {
         <Logotype></Logotype>
         <DayleNorm></DayleNorm>
         <AddButton setIsOpen={setIsOpen}></AddButton>
-        {isOpen && <AddWater setIsOpen={setIsOpen}></AddWater>}
+        {isOpen && <AddWater setIsOpen={setIsOpen} setwaterAction={setwaterActions}></AddWater>}
       </div>
       <div className={s.rightSide}>
             <p>Hello<span>, Nadia</span></p>
             <User className={s.user}></User>
-            <WaterBlock setIsOpen={setIsOpen}></WaterBlock>
-            {isOpen && <WaterBlock setIsOpen={setIsOpen}></WaterBlock>}
+            <WaterBlock setIsOpen={setIsOpen}></WaterBlock>            
       </div>
     </div>
   );
