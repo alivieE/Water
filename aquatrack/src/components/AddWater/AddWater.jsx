@@ -49,6 +49,7 @@ const AddWater = ({ setIsOpen, setwaterAction }) => {
 
   localStorage.setItem("transactions", JSON.stringify(transactions));
 
+ 
   return (
     <div className={s.modalWindowOverlay}>
       <form className={s.modal} onSubmit={handleSubmit}>
