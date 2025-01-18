@@ -8,12 +8,11 @@ const WaterBlock = ({ setIsOpen, waterAction, setWaterAction }) => {
 
   const DeleteWaterAction = (id) => {
     const filteredArray = waterAction.filter((actionData) => {
-      return actionData.id !== id
-    })
-    setWaterAction(filteredArray)
-    localStorage.setItem('waterAction', JSON.stringify(filteredArray))
-    
-  }
+      return actionData.id !== id;
+    });
+    setWaterAction(filteredArray);
+    localStorage.setItem("waterActions", JSON.stringify(filteredArray));
+  };
   return (
     <div>
       <div className={s.actionList}>
@@ -43,10 +42,14 @@ const WaterBlock = ({ setIsOpen, waterAction, setWaterAction }) => {
               </div>
               <div className={s.imges}>
                 <img src={Image.change} />
-                <button type="button" onClick={() => {DeleteWaterAction(actionData.id)}}>
+                <button
+                  type="button"
+                  onClick={() => {
+                    DeleteWaterAction(actionData.id);
+                  }}
+                >
                   <img src={Image.trash} />
                 </button>
-                
               </div>
             </div>
           );

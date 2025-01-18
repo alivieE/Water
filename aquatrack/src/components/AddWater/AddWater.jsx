@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import s from "./AddWater.module.css";
 import Image from "../../assets/index";
-
-const AddWater = ({ setIsOpen, setwaterAction }) => {
+import { v4 as uuidv4 } from "uuid";
+const AddWater = ({ setIsOpen, setWaterAction }) => {
   const [waterAmount, setWaterAmount] = useState(250);
   const [actionDate, setActionDate] = useState("");
 
@@ -24,8 +24,8 @@ const AddWater = ({ setIsOpen, setwaterAction }) => {
   const handleSubmit = (event) => {
     event.preventDefault();
     console.log("start");
-    const actionData = { amount: waterAmount, date: actionDate };
-    setwaterAction((prev) => {
+    const actionData = { amount: waterAmount, date: actionDate, id: uuidv4() };
+    setWaterAction((prev) => {
       console.log("local");
       localStorage.setItem(
         "waterActions",
