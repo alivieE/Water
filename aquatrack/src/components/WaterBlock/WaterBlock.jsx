@@ -26,8 +26,8 @@ const WaterBlock = ({ setIsOpen, waterAction, setWaterAction }) => {
             <div className={s.miniBlocks}>
               <img className={s.glassImg} src={Image.glass} />
               <div className={s.textTimaAndMl}>
-                <p className={s.textML}>250 ml</p>
-                <p className={s.textTime}>7:00 AM</p>
+                <p className={s.textML}>{actionData.amount + " ml"}</p>
+                <p className={s.textTime}>{actionData.date} AM</p>
               </div>
               <div className={s.imges}>
                 <img src={Image.change} />
