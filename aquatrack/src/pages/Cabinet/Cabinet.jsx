@@ -11,7 +11,10 @@ import WaterBlock from "../../components/WaterBlock/WaterBlock";
 
 const Cabinet = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [waterActions, setwaterActions] = useState([]);
+  const [waterActions, setwaterActions] = useState(() => {
+    const localStorageValue = localStorage.getItem('waterActions')
+    return localStorageValue || []
+  });
   return (
     <div className={s.Section}>
       <div className={s.leftSide}>
