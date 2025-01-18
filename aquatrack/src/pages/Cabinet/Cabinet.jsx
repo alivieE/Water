@@ -11,7 +11,7 @@ import WaterBlock from "../../components/WaterBlock/WaterBlock";
 
 const Cabinet = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [waterActions, setwaterActions] = useState(() => {
+  const [waterActions, setWaterAction] = useState(() => {
     const localStorageValue = JSON.parse(localStorage.getItem("waterActions"));
     return localStorageValue || [];
   });
@@ -25,7 +25,7 @@ const Cabinet = () => {
         {isOpen && (
           <AddWater
             setIsOpen={setIsOpen}
-            setwaterAction={setwaterActions}
+            setWaterAction={setWaterAction}
           ></AddWater>
         )}
       </div>
@@ -36,7 +36,7 @@ const Cabinet = () => {
         <User className={s.user}></User>
         <WaterBlock
           setIsOpen={setIsOpen}
-          setwaterAction={setwaterActions}
+          setWaterAction={setWaterAction}
           waterAction={waterActions}
         ></WaterBlock>
       </div>

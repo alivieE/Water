@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "date": "^2.0.6",
+    "formate": "^1.0.0"
+  }
+}

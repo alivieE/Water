@@ -2,8 +2,18 @@ import React from "react";
 import s from "./WaterBlock.module.css";
 import Image from "../../assets/index";
 import dateFormat, { masks } from "dateformat";
+
 const WaterBlock = ({ setIsOpen, waterAction, setWaterAction }) => {
   console.log(waterAction);
+
+  const DeleteWaterAction = (id) => {
+    const filteredArray = waterAction.filter((actionData) => {
+      return actionData.id !== id
+    })
+    setWaterAction(filteredArray)
+    localStorage.setItem('waterAction', JSON.stringify(filteredArray))
+    
+  }
   return (
     <div>
       <div className={s.actionList}>
@@ -33,7 +43,10 @@ const WaterBlock = ({ setIsOpen, waterAction, setWaterAction }) => {
               </div>
               <div className={s.imges}>
                 <img src={Image.change} />
-                <img src={Image.trash} />
+                <button type="button" onClick={() => {DeleteWaterAction(actionData.id)}}>
+                  <img src={Image.trash} />
+                </button>
+                
               </div>
             </div>
           );
