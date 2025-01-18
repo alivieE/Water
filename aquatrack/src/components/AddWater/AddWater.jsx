@@ -27,6 +27,7 @@ const AddWater = ({ setIsOpen, setwaterAction }) => {
     console.log()
     const actionData = {amount: waterAmount, date: actionDate}
     setwaterAction( (prev) => {
+      localStorage.setItem("waterActions", JSON.stringify([...prev,actionData]));
       return [...prev,actionData]
     }) 
   }
@@ -43,11 +44,9 @@ const AddWater = ({ setIsOpen, setwaterAction }) => {
     setWaterAmount((prevValue) => (prevValue - 50 < 50 ? 50 : prevValue - 50));
   };
 
-
-  const transactions = { waterAmount, actionDate};
   
 
-  localStorage.setItem("transactions", JSON.stringify(transactions));
+  
 
  
   return (

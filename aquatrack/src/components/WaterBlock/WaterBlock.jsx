@@ -2,7 +2,9 @@ import React from 'react'
 import s from './WaterBlock.module.css'
 import Image from '../../assets/index'
 
-const WaterBlock = ({setIsOpen}) => {
+
+const WaterBlock = ({setIsOpen, waterAction, setWaterAction}) => {
+
   return (
     <div>
       <div className={s.actionList}>
@@ -19,7 +21,8 @@ const WaterBlock = ({setIsOpen}) => {
         </div>
       </div>
       <div className={s.Block}>
-          <div className={s.miniBlocks}>
+        {waterAction.map((actionData) =>{
+            <div className={s.miniBlocks}>
             <img className={s.glassImg} src={Image.glass}/>
             <div className={s.textTimaAndMl}>
               <p className={s.textML}>250 ml</p>
@@ -30,6 +33,8 @@ const WaterBlock = ({setIsOpen}) => {
               <img src={Image.trash}/>
             </div>
           </div>
+        })}
+          
          
       </div>
     </div>

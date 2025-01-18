@@ -26,7 +26,7 @@ const Cabinet = () => {
       <div className={s.rightSide}>
             <p>Hello<span>, Nadia</span></p>
             <User className={s.user}></User>
-            <WaterBlock setIsOpen={setIsOpen}></WaterBlock>            
+            <WaterBlock setIsOpen={setIsOpen} setwaterAction={setwaterActions} waterAction={waterActions}></WaterBlock>            
       </div>
     </div>
   );
