@@ -43,6 +43,12 @@ const AddWater = ({ setIsOpen, setwaterAction }) => {
     setWaterAmount((prevValue) => (prevValue - 50 < 50 ? 50 : prevValue - 50));
   };
 
+
+  const transactions = { waterAmount, actionDate};
+  
+
+  localStorage.setItem("transactions", JSON.stringify(transactions));
+
   return (
     <div className={s.modalWindowOverlay}>
       <form className={s.modal} onSubmit={handleSubmit}>
@@ -86,7 +92,10 @@ const AddWater = ({ setIsOpen, setwaterAction }) => {
         </div>
 
         <button className={s.SaveButton}
-        type="submit">
+        type="submit"
+        onClick={() => {
+          setIsOpen(false);
+        }}>
           Save</button>
 
         <button
