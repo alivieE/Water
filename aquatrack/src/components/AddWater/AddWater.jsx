@@ -21,18 +21,20 @@ const AddWater = ({ setIsOpen, setwaterAction }) => {
     }
   };
 
-  
   const handleSubmit = (event) => {
-    event.preventDefault()
-    console.log()
-    const actionData = {amount: waterAmount, date: actionDate}
-    setwaterAction( (prev) => {
-      localStorage.setItem("waterActions", JSON.stringify([...prev,actionData]));
-      return [...prev,actionData]
-    }) 
-  }
-
-  
+    event.preventDefault();
+    console.log("start");
+    const actionData = { amount: waterAmount, date: actionDate };
+    setwaterAction((prev) => {
+      console.log("local");
+      localStorage.setItem(
+        "waterActions",
+        JSON.stringify([...prev, actionData])
+      );
+      return [...prev, actionData];
+    });
+    setIsOpen(false);
+  };
 
   const incramentWater = () => {
     setWaterAmount((prevValue) =>
@@ -44,11 +46,6 @@ const AddWater = ({ setIsOpen, setwaterAction }) => {
     setWaterAmount((prevValue) => (prevValue - 50 < 50 ? 50 : prevValue - 50));
   };
 
-  
-
-  
-
- 
   return (
     <div className={s.modalWindowOverlay}>
       <form className={s.modal} onSubmit={handleSubmit}>
@@ -91,15 +88,11 @@ const AddWater = ({ setIsOpen, setwaterAction }) => {
           />
         </div>
 
-        <button className={s.SaveButton}
-        type="submit"
-        onClick={() => {
-          setIsOpen(false);
-        }}>
-          Save</button>
+        <button className={s.SaveButton} type="submit">
+          Save
+        </button>
 
         <button
-          
           className={s.close}
           onClick={() => {
             setIsOpen(false);
