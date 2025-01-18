@@ -39,7 +39,7 @@
 }
 
 .miniBlocks {
-  width: 192px;
+  width: 220px;
   background-color: white;
   display: flex;
   border-radius: 15px;
@@ -51,6 +51,9 @@
   font-weight: 700;
   font-size: 15px;
   display: flex;
+
+  flex-wrap: nowrap;
+  width: 70px;
 }
 
 .textTime {
@@ -70,7 +73,7 @@
   width: 8px;
 }
 
-::-webkit-scrollbar-track {  
+::-webkit-scrollbar-track {
   border-radius: 4px;
   background-color: white;
 }
@@ -88,8 +91,8 @@
   height: auto;
 }
 
-.imges{    
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+.imges {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }

@@ -1,7 +1,7 @@
 import React from "react";
 import s from "./WaterBlock.module.css";
 import Image from "../../assets/index";
-
+import dateFormat, { masks } from "dateformat";
 const WaterBlock = ({ setIsOpen, waterAction, setWaterAction }) => {
   console.log(waterAction);
   return (
@@ -26,8 +26,10 @@ const WaterBlock = ({ setIsOpen, waterAction, setWaterAction }) => {
             <div className={s.miniBlocks}>
               <img className={s.glassImg} src={Image.glass} />
               <div className={s.textTimaAndMl}>
-                <p className={s.textML}>{actionData.amount + " ml"}</p>
-                <p className={s.textTime}>{actionData.date} AM</p>
+                <p className={s.textML}>{actionData.amount} ml</p>
+                <p className={s.textTime}>
+                  {dateFormat(actionData.date, "shortTime")}
+                </p>
               </div>
               <div className={s.imges}>
                 <img src={Image.change} />
