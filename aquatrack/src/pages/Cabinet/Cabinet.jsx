@@ -18,7 +18,7 @@ const Cabinet = () => {
   return (
     <div className={s.Section}>
       <div className={s.leftSide}>
-        <DayleProgressBar percent={"63"}></DayleProgressBar>a
+        <DayleProgressBar percent={"63"}></DayleProgressBar>
         <Logotype></Logotype>
         <DayleNorm></DayleNorm>
         <AddButton setIsOpen={setIsOpen}></AddButton>
