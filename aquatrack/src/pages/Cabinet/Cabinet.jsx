@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { use, useState } from "react";
 import s from "./Cabinet.module.css";
 import images from "../../assets";
 import Logotype from "../../components/logo/Logotype";
@@ -8,9 +8,11 @@ import DayleProgressBar from "../../components/Bottle/DayleProgressBar";
 import AddWater from "../../components/AddWater/AddWater";
 import User from "../../components/User/User";
 import WaterBlock from "../../components/WaterBlock/WaterBlock";
+import UserInfo from "../../components/UserInfo/UserInfo";
 
 const Cabinet = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [userOpen, setUserOpen] = useState(false);
   const [waterActions, setWaterAction] = useState(() => {
     const localStorageValue = JSON.parse(localStorage.getItem("waterActions"));
     return localStorageValue || [];
@@ -33,12 +35,18 @@ const Cabinet = () => {
         <p>
           Hello<span>, Nadia</span>
         </p>
-        <User className={s.user}></User>
+        <User className={s.user} setUserOpen={setUserOpen}></User>
         <WaterBlock
           setIsOpen={setIsOpen}
           setWaterAction={setWaterAction}
           waterAction={waterActions}
         ></WaterBlock>
+        {userOpen && (
+        <UserInfo
+            setUserOpen={setUserOpen}          
+        ></UserInfo>
+        )}
+        
       </div>
     </div>
   );
