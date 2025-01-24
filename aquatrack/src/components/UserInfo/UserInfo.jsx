@@ -7,9 +7,9 @@ const UserInfo = ({setUserOpen}) => {
     <div className={s.modalWindowOverlay}>
           <form className={s.modal} >
             <p className={s.title}>Setting</p>                
-                <div>
-                  <img></img>                        
-                </div>
+            <div>
+                <img></img>                        
+            </div>
             <div className={s.inputBlocks} >
                 <div className={s.BlockFirst}>
                     <p className={s.subTitle}>Your gender identity</p>
