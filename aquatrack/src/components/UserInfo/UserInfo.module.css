@@ -121,3 +121,18 @@
   display: flex;
   
 }
+
+.fourRow{
+  display: flex;
+  gap: 2px;
+}
+
+.inputSpecial{
+  border: 1px solid rgba(47, 47, 47, 0.15);
+    border-radius: 15px;
+    padding: 16px;
+    width: 366px;
+    height: 152px;
+    position: relative;
+    cursor: pointer;
+}
