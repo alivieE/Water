@@ -92,7 +92,10 @@ const UserInfo = ({setUserOpen}) => {
                     <img src={Image.close}/>
             </button>
 
-            <button className={s.SaveButton} type="submit">
+            <button className={s.SaveButton} type="submit"
+            onClick={() => {
+                setUserOpen(false);
+               }}>
                       Save
             </button>
           </form>
