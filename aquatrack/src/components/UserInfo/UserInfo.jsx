@@ -3,6 +3,8 @@ import s from './UserInfo.module.css'
 import Image from "../../assets/index";
 
 const UserInfo = ({setUserOpen}) => {
+
+    
   return (
     <div className={s.modalWindowOverlay}>
           <form className={s.modal} >

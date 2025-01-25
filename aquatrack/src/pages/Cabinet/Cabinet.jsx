@@ -9,6 +9,7 @@ import AddWater from "../../components/AddWater/AddWater";
 import User from "../../components/User/User";
 import WaterBlock from "../../components/WaterBlock/WaterBlock";
 import UserInfo from "../../components/UserInfo/UserInfo";
+import Calendar from "../../components/Calendar/Calendar";
 
 const Cabinet = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -46,6 +47,7 @@ const Cabinet = () => {
             setUserOpen={setUserOpen}          
         ></UserInfo>
         )}
+        <Calendar></Calendar>
         
       </div>
     </div>

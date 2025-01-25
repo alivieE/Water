@@ -13,6 +13,8 @@ const WaterBlock = ({ setIsOpen, waterAction, setWaterAction }) => {
     setWaterAction(filteredArray);
     localStorage.setItem("waterActions", JSON.stringify(filteredArray));
   };
+
+
   return (
     <div>
       <div className={s.actionList}>
