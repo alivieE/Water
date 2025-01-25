@@ -4,7 +4,7 @@ import images from "../../assets";
 import Logotype from "../../components/logo/Logotype";
 import DayleNorm from "../../components/Daylynormal/DayleNorm";
 import AddButton from "../../components/AddButton/AddButton";
-import DayleProgressBar from "../../components/Bottle/DayleProgressBar";
+import DayleProgressBar from "../../components/DailyProgressBar/DayleProgressBar";
 import AddWater from "../../components/AddWater/AddWater";
 import User from "../../components/User/User";
 import WaterBlock from "../../components/WaterBlock/WaterBlock";
@@ -18,10 +18,23 @@ const Cabinet = () => {
     const localStorageValue = JSON.parse(localStorage.getItem("waterActions"));
     return localStorageValue || [];
   });
+  const [pickedDate, setPickedDate] = useState(new Date());
+  const filteredWaterActions = waterActions.filter((actionObj) => {
+    const actionDate = new Date(actionObj.date);
+
+    return (
+      actionDate.getFullYear() === pickedDate.getFullYear() &&
+      actionDate.getMonth() === pickedDate.getMonth() &&
+      actionDate.getDate() === pickedDate.getDate()
+    );
+  });
   return (
     <div className={s.Section}>
       <div className={s.leftSide}>
-        <DayleProgressBar percent={"63"}></DayleProgressBar>
+        <DayleProgressBar
+          pickedDate={pickedDate}
+          filteredWaterActions={filteredWaterActions}
+        ></DayleProgressBar>
         <Logotype></Logotype>
         <DayleNorm></DayleNorm>
         <AddButton setIsOpen={setIsOpen}></AddButton>
@@ -38,17 +51,17 @@ const Cabinet = () => {
         </p>
         <User className={s.user} setUserOpen={setUserOpen}></User>
         <WaterBlock
+          pickedDate={pickedDate}
           setIsOpen={setIsOpen}
           setWaterAction={setWaterAction}
           waterAction={waterActions}
+          filteredWaterActions={filteredWaterActions}
         ></WaterBlock>
-        {userOpen && (
-        <UserInfo
-            setUserOpen={setUserOpen}          
-        ></UserInfo>
-        )}
-        <Calendar></Calendar>
-        
+        {userOpen && <UserInfo setUserOpen={setUserOpen}></UserInfo>}
+        <Calendar
+          waterActions={waterActions}
+          setPickedDate={setPickedDate}
+        ></Calendar>
       </div>
     </div>
   );

@@ -96,3 +96,6 @@
   flex-direction: column;
   justify-content: space-between;
 }
+.placeholder {
+  height: 130px;
+}

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import s from "./AddWater.module.css";
 import Image from "../../assets/index";
 import { v4 as uuidv4 } from "uuid";
+
 const AddWater = ({ setIsOpen, setWaterAction }) => {
   const [waterAmount, setWaterAmount] = useState(250);
   const [actionDate, setActionDate] = useState("");
@@ -56,11 +57,19 @@ const AddWater = ({ setIsOpen, setWaterAction }) => {
         <div className={s.AmountBlock}>
           <p>Amount fo water</p>
           <div className={s.controlsWrap}>
-            <button onClick={decramentWater} className={s.amountChangeButton}>
+            <button
+              type="button"
+              onClick={decramentWater}
+              className={s.amountChangeButton}
+            >
               <img src={Image.minus} />
             </button>
             <p className={s.inputWrap}>{waterAmount} ml</p>
-            <button onClick={incramentWater} className={s.amountChangeButton}>
+            <button
+              type="button"
+              onClick={incramentWater}
+              className={s.amountChangeButton}
+            >
               <img src={Image.addWaterPlus} />
             </button>
           </div>
