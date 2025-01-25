@@ -6,8 +6,8 @@ const User = ({setUserOpen}) => {
     const Name = "Nadia"
   return (
     <div className={s.userBlock}>
-      <p className={s.name}>{Name}</p>
-      <p className={s.photo}></p>
+      <p className={s.name}>{Name}</p>      
+      <img  className={s.photo}src={Image.UserPhoto}/>
       <button className={s.button}
       onClick={() => {
         setUserOpen(true);
