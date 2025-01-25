@@ -21,6 +21,12 @@
     color: #323f47;
     text-align: center;
     font-family: "Poppins", sans-serif;
+    overflow-y: scroll;
+    overflow: hidden;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #2c343a;
   }
 
   .title {
@@ -47,6 +53,7 @@
     width: 366px;
     position: relative;
     cursor: pointer;
+    margin-bottom: 14px;
   }
 
 
@@ -117,6 +124,10 @@
   gap: 4px;
 }
 
+.vectorImg{
+  width: 4.7px;
+}
+
 .textFormula{
   display: flex;
   
@@ -124,7 +135,9 @@
 
 .fourRow{
   display: flex;
+  flex-direction: column;
   gap: 2px;
+  
 }
 
 .inputSpecial{
@@ -135,4 +148,40 @@
     height: 152px;
     position: relative;
     cursor: pointer;
+}
+
+.UserBlock{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.BlocksFourth{
+  display: flex;
+}
+
+.ActiveTime{
+  display: flex;
+  gap: 4px;
+}
+
+.close{
+  background: none;
+  position: absolute;
+  top: 47px;
+  right: 47px;
+}
+
+.SaveButton {
+  background-color: rgb(155, 225, 160);
+  width: 141px;
+  height: 60px;
+  border: none;
+  border-radius: 30px;
+  font-weight: 700;
+  font-size: 16px;
+  padding: 18px 50px;
+  margin-top: 24px;
+  text-align: left;
+  display: block;
 }

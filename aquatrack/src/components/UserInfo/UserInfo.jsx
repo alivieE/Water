@@ -7,8 +7,10 @@ const UserInfo = ({setUserOpen}) => {
     <div className={s.modalWindowOverlay}>
           <form className={s.modal} >
             <p className={s.title}>Setting</p>                
-            <div>
-                <img></img>                        
+            <div className={s.UserBlock}>
+                <img src={Image.UserPhoto}/>
+                <img src={Image.upload}/>
+                <p>Upload a photo</p>
             </div>
             <div className={s.inputBlocks} >
                 <div className={s.BlockFirst}>
@@ -57,53 +59,41 @@ const UserInfo = ({setUserOpen}) => {
                                 <p className={s.formula}>V=(M*0,04) + (T*0,6)</p>
                             </div>
                         </div>
-                        <div className={s.vector}>
+                        <div>
+                            <input 
+                                type="text" 
+                                placeholder="* V is the volume of the water norm in liters per day, M is your body weight, T is the time of active sports, or another type of activity commensurate in terms of loads (in the absence of these, you must set 0)" 
+                                className={s.inputSpecial}
+                            />
+                        </div>
+                        <div className={s.ActiveTime}>
                             <img src={Image.Vector}/>
                             <p>Active time in hours</p>
                         </div>
-                    </div>
-                    <div>
-                    <input 
-                        type="text" 
-                        placeholder="* V is the volume of the water norm in liters per day, M is your body weight, T is the time of active sports, or another type of activity commensurate in terms of loads (in the absence of these, you must set 0)" 
-                        className={s.inputSpecial}
-                    />
-                    </div>
-                    <div>
+                    </div>                        
+                </div>
+                <div>
+                    <div>                        
                         <div className={s.fourRow}>
-                            <p className={s.text}>The required amount of water in liters per day:</p>
-                            <p className={s.formula}>1.8L</p>
-                        </div>                        
-                    </div>
+                                <p className={s.text}>The required amount of water in liters per day:</p>
+                                <p className={s.formula}>1.8L</p>
+                                <p className={s.subTitle}>Write down how much water you will drink:</p>
+                                <input className={s.input} type="text" />
+                        </div> 
+                     </div>
                 </div>
             </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
             <button
                 className={s.close}
                 onClick={() => {
                 setUserOpen(false);
                }}>
-                    close
+                    <img src={Image.close}/>
+            </button>
+
+            <button className={s.SaveButton} type="submit">
+                      Save
             </button>
           </form>
         </div>
