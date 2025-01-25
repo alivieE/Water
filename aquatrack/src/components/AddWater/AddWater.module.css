@@ -95,7 +95,7 @@
   align-items: flex-start;
 }
 
-vv
+
 .inputBlock {
   margin-top: 24px;
 }
@@ -114,5 +114,20 @@ vv
 }
 
 .img {
+  display: block;
+}
+
+
+.SaveButton {
+  background-color: rgb(155, 225, 160);
+  width: 141px;
+  height: 60px;
+  border: none;
+  border-radius: 30px;
+  font-weight: 700;
+  font-size: 16px;
+  padding: 18px 50px;
+  margin-top: 24px;
+  text-align: left;
   display: block;
 }
