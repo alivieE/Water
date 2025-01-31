@@ -25,7 +25,7 @@ const Calendar = ({ setPickedDate, waterActions }) => {
     console.log(percent);
     return { fullDate: date, percentDay: percent > 100 ? 100 : percent };
   });
-  console.log(422232222);
+  console.log(4222322222);
   return (
     <ul className={s.calendarList}>
       {calculateDates.map((day) => {
