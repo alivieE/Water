@@ -95,7 +95,13 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  background-color: transparent;
 }
 .placeholder {
   height: 130px;
+}
+
+.trashBox{
+  background: none;
+  background-color: none;
 }

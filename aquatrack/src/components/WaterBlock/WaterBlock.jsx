@@ -55,19 +55,22 @@ const WaterBlock = ({
                 </div>
                 <div
                   className={s.imges}
-                  type="button"
+                  
+                >
+                  <div>
+                    <img src={Image.change} type="button"
                   onClick={() => {
                     editAction(actionData);
-                  }}
-                >
-                  <img src={Image.change} />
+                  }}/>
+                  </div>                
                   <button
                     type="button"
+                    className={s.imges}
                     onClick={() => {
                       DeleteWaterAction(actionData.id);
                     }}
                   >
-                    <img src={Image.trash} />
+                    <img src={Image.trash} className={s.trashBox} />
                   </button>
                 </div>
               </li>

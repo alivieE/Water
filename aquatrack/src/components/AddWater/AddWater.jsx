@@ -34,11 +34,18 @@ const AddWater = ({ setIsOpen, setWaterAction, pickedDate, editObj }) => {
   };
 
   const handleSubmit = (event) => {
-    event.preventDefault();
-    console.log("start");
+    event.preventDefault();    
     const actionData = { amount: waterAmount, date: actionDate, id: uuidv4() };
     setWaterAction((prev) => {
-      console.log("local");
+      if (editObj) {
+        const newWaterAction = prev.map((prevAction) => {
+          if (editObj.id === prevAction.id) {
+            return prevAction            
+          }
+          return prevAction
+        })
+        return newWaterAction
+      }
       localStorage.setItem(
         "waterActions",
         JSON.stringify([...prev, actionData])
