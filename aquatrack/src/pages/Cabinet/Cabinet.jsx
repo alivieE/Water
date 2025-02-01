@@ -19,6 +19,8 @@ const Cabinet = () => {
     return localStorageValue || [];
   });
   const [pickedDate, setPickedDate] = useState(new Date());
+  const [editObj, seteditObj] = useState(null);
+
   const filteredWaterActions = waterActions.filter((actionObj) => {
     const actionDate = new Date(actionObj.date);
 
@@ -42,6 +44,8 @@ const Cabinet = () => {
           <AddWater
             setIsOpen={setIsOpen}
             setWaterAction={setWaterAction}
+            pickedDate={pickedDate}
+            editObj={editObj}
           ></AddWater>
         )}
       </div>
@@ -51,6 +55,7 @@ const Cabinet = () => {
         </p>
         <User className={s.user} setUserOpen={setUserOpen}></User>
         <WaterBlock
+          seteditObj={seteditObj}
           pickedDate={pickedDate}
           setIsOpen={setIsOpen}
           setWaterAction={setWaterAction}

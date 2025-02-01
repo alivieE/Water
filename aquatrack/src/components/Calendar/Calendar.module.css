@@ -17,6 +17,7 @@
   flex-wrap: wrap;
   margin-top: 20px;
   font-family: "Poppins", sans-serif;
+  justify-content: center;
 }
 .percents {
   position: absolute;
@@ -25,5 +26,4 @@
   transform: translateX(-50%);
   font-weight: 400;
   font-size: 12px;
-  
 }

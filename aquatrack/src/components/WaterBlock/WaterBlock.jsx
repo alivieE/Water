@@ -9,6 +9,7 @@ const WaterBlock = ({
   setWaterAction,
   pickedDate,
   filteredWaterActions,
+  seteditObj,
 }) => {
   const DeleteWaterAction = (id) => {
     const filteredArray = waterAction.filter((actionData) => {
@@ -17,6 +18,10 @@ const WaterBlock = ({
     setWaterAction(filteredArray);
     localStorage.setItem("waterActions", JSON.stringify(filteredArray));
   };
+  function editAction(obj) {
+    seteditObj(obj);
+    setIsOpen(true);
+  }
 
   return (
     <div>
@@ -48,7 +53,13 @@ const WaterBlock = ({
                     {dateFormat(actionData.date, "shortTime")}
                   </p>
                 </div>
-                <div className={s.imges}>
+                <div
+                  className={s.imges}
+                  type="button"
+                  onClick={() => {
+                    editAction(actionData);
+                  }}
+                >
                   <img src={Image.change} />
                   <button
                     type="button"
