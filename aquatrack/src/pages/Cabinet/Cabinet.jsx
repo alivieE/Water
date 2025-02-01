@@ -1,4 +1,4 @@
-import React, { use, useState } from "react";
+import React, { useState, useEffect } from "react";
 import s from "./Cabinet.module.css";
 import images from "../../assets";
 import Logotype from "../../components/logo/Logotype";
@@ -30,6 +30,11 @@ const Cabinet = () => {
       actionDate.getDate() === pickedDate.getDate()
     );
   });
+  useEffect(() => {
+    if (isOpen === false) {
+      seteditObj(null);
+    }
+  }, [isOpen]);
   return (
     <div className={s.Section}>
       <div className={s.leftSide}>
@@ -42,6 +47,7 @@ const Cabinet = () => {
         <AddButton setIsOpen={setIsOpen}></AddButton>
         {isOpen && (
           <AddWater
+            seteditObj={seteditObj}
             setIsOpen={setIsOpen}
             setWaterAction={setWaterAction}
             pickedDate={pickedDate}

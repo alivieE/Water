@@ -3,7 +3,13 @@ import s from "./AddWater.module.css";
 import Image from "../../assets/index";
 import { v4 as uuidv4 } from "uuid";
 
-const AddWater = ({ setIsOpen, setWaterAction, pickedDate, editObj }) => {
+const AddWater = ({
+  setIsOpen,
+  setWaterAction,
+  pickedDate,
+  editObj,
+  seteditObj,
+}) => {
   const [waterAmount, setWaterAmount] = useState(editObj?.amount || 250);
   const [actionDate, setActionDate] = useState(() => {
     const picked = new Date(pickedDate);
@@ -34,17 +40,19 @@ const AddWater = ({ setIsOpen, setWaterAction, pickedDate, editObj }) => {
   };
 
   const handleSubmit = (event) => {
-    event.preventDefault();    
+    event.preventDefault();
     const actionData = { amount: waterAmount, date: actionDate, id: uuidv4() };
     setWaterAction((prev) => {
       if (editObj) {
         const newWaterAction = prev.map((prevAction) => {
           if (editObj.id === prevAction.id) {
-            return prevAction            
+            return actionData;
           }
-          return prevAction
-        })
-        return newWaterAction
+          return prevAction;
+        });
+        console.log(newWaterAction);
+        localStorage.setItem("waterActions", JSON.stringify(newWaterAction));
+        return newWaterAction;
       }
       localStorage.setItem(
         "waterActions",
@@ -52,6 +60,7 @@ const AddWater = ({ setIsOpen, setWaterAction, pickedDate, editObj }) => {
       );
       return [...prev, actionData];
     });
+
     setIsOpen(false);
   };
 
