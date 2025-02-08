@@ -32,14 +32,14 @@
 .Block {
   display: flex;
   gap: 16px;
-  justify-content: space-between;
+  justify-content: flex-start;
   overflow-x: scroll;
   padding: 10px;
   padding-bottom: 32px;
 }
 
 .miniBlocks {
-  width: 220px;
+  max-width: 220px;
   background-color: white;
   display: flex;
   border-radius: 15px;
