@@ -69,6 +69,7 @@ const Cabinet = () => {
           filteredWaterActions={filteredWaterActions}
         ></WaterBlock>
         {userOpen && <UserInfo setUserOpen={setUserOpen}></UserInfo>}
+
         <Calendar
           waterActions={waterActions}
           setPickedDate={setPickedDate}
