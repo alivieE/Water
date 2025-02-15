@@ -7,6 +7,9 @@ const UserInfo = ({ setUserOpen, dailyNorm, setDailyNorm }) => {
   const [userWieght, setUserWieght] = useState(0);
   const [userSportTime, setUserSportTime] = useState(0);
 
+  const formula = Math.floor((userWieght*0.04) + (userSportTime*0.6));
+  console.log(formula)
+
   function handleDailyNorm(event) {
     setUserDailyNorm(Number(event.target.value));
   }
@@ -29,6 +32,7 @@ const UserInfo = ({ setUserOpen, dailyNorm, setDailyNorm }) => {
     setDailyNorm(userDailyNorm);
     setUserOpen(false);
   }
+  
 
   return (
     <div className={s.modalWindowOverlay}>
@@ -100,12 +104,9 @@ const UserInfo = ({ setUserOpen, dailyNorm, setDailyNorm }) => {
                   <p className={s.formula}>V=(M*0,04) + (T*0,6)</p>
                 </div>
               </div>
-              <div>
-                <input
-                  type="text"
-                  placeholder="* V is the volume of the water norm in liters per day, M is your body weight, T is the time of active sports, or another type of activity commensurate in terms of loads (in the absence of these, you must set 0)"
-                  className={s.inputSpecial}
-                />
+              <div className={s.explanation}>
+                <p className={s.SpecialText}><p className={s.star}>*</p> V is the volume of the water norm in liters per day, M is your body weight, T is the time of active sports, or another type of activity commensurate in terms of loads (in the absence of these, you must set 0)</p>
+            
               </div>
               <div className={s.ActiveTime}>
                 <img src={Image.Vector} />
@@ -119,7 +120,7 @@ const UserInfo = ({ setUserOpen, dailyNorm, setDailyNorm }) => {
                 <p className={s.text}>
                   The required amount of water in liters per day:
                 </p>
-                <p className={s.formula}>{dailyNorm}</p>
+                <p className={s.formula}>{userWieght===0 || userSportTime===0 ? 1.5 : formula} L</p>
                 <p className={s.subTitle}>
                   Write down how much water you will drink:
                 </p>

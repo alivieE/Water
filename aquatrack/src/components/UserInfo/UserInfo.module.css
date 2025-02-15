@@ -148,14 +148,27 @@
   
 }
 
-.inputSpecial{
+.star{
+  color: rgb(155, 225, 160);
+
+}
+
+.SpecialText{
   border: 1px solid rgba(47, 47, 47, 0.15);
     border-radius: 15px;
     padding: 16px;
-    width: 366px;
+    width: 400px;
     height: 152px;
     position: relative;
-    cursor: pointer;
+    font-weight: 400;    
+    font-size: 16px;
+    display: flex;
+    color: #2F2F2F99;
+}
+
+.explanation{
+  margin-bottom: 14px;
+  margin-top: 14px;
 }
 
 .UserBlock{
