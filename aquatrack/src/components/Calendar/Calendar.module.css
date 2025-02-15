@@ -11,6 +11,9 @@
   cursor: pointer;
   position: relative;
 }
+.fullCircle {
+  background-color: #323f4720;
+}
 .calendarList {
   display: flex;
   gap: 58px;
@@ -28,24 +31,24 @@
   font-size: 12px;
 }
 
-.text{
+.text {
   font-weight: 700;
   font-size: 16px;
 }
 
-.Statistic{
+.Statistic {
   font-weight: 700;
   font-size: 28px;
-  color: #323F47;
+  color: #323f47;
 }
 
-.changeBlock{
+.changeBlock {
   display: flex;
   justify-content: space-between;
-  color: #323F47;
+  color: #323f47;
 }
 
-.ChangeCalendar{
+.ChangeCalendar {
   gap: 20px;
   align-items: center;
   display: flex;

@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import s from "./Calendar.module.css";
 import dateFormat, { masks } from "dateformat";
 import getMonthDates from "../../helpers/getMonthDates";
-import Image from '../../assets/index'
-const Calendar = ({ setPickedDate, waterActions, dailyNorm}) => {
+import Image from "../../assets/index";
+const Calendar = ({ setPickedDate, waterActions, dailyNorm }) => {
   const [countMonth, setCountMonth] = useState(0);
 
   const currentDay = new Date();
@@ -25,7 +25,7 @@ const Calendar = ({ setPickedDate, waterActions, dailyNorm}) => {
         return +action.amount + acc;
       }, 0);
 
-    const percent = Math.floor((totalWater / (dailyNorm*1000)) * 100);
+    const percent = Math.floor((totalWater / (dailyNorm * 1000)) * 100);
 
     return { fullDate: date, percentDay: percent > 100 ? 100 : percent };
   });
@@ -39,13 +39,15 @@ const Calendar = ({ setPickedDate, waterActions, dailyNorm}) => {
     <section>
       <div className={s.changeBlock}>
         <p className={s.Statistic}>Statistic</p>
-        <div  className={s.ChangeCalendar}>
+        <div className={s.ChangeCalendar}>
           <button onClick={prevMonth}>
-            <img src={Image.VectorToLeft}/>
+            <img src={Image.VectorToLeft} />
           </button>
-          <p className={s.text}>{dateFormat(currentMonthDates[0], "mmmm,yyyy")}</p>
+          <p className={s.text}>
+            {dateFormat(currentMonthDates[0], "mmmm,yyyy")}
+          </p>
           <button onClick={nextMonth}>
-            <img src={Image.VectorToRight}/>
+            <img src={Image.VectorToRight} />
           </button>
         </div>
       </div>
@@ -57,12 +59,19 @@ const Calendar = ({ setPickedDate, waterActions, dailyNorm}) => {
               onClick={() => {
                 setPickedDate(day.fullDate);
               }}
-              className={s.circle}
+              className={`${day.percentDay !== 100 && s.fullCircle} ${
+                s.circle
+              }`}
               style={{
-                color:
-                  currentDay.getDate() === new Date(day.fullDate).getDate()
-                    ? "#9BE1A0"
-                    : "#323F47",
+                ...(currentDay.getDate() ===
+                  new Date(day.fullDate).getDate() && {
+                  color: "#9BE1A0",
+                  backgroundColor: "#323F47",
+                }),
+                // color:
+                //   currentDay.getDate() === new Date(day.fullDate).getDate()
+                //      "#9BE1A0"
+                //     : "#323F47",
               }}
             >
               <p> {day.fullDate.getDate()}</p>
