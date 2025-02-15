@@ -16,6 +16,8 @@ import { EffectCube, Pagination } from "swiper/modules";
 const Cabinet = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [userOpen, setUserOpen] = useState(false);
+
+  const a = 2;
   const [dailyNorm, setDailyNorm] = useState(() => {
     return localStorage.getItem("daiylnorm") || 1.5;
   });
