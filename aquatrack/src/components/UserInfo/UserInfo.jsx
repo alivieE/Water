@@ -20,7 +20,7 @@ const UserInfo = ({ setUserOpen, dailyNorm, setDailyNorm }) => {
     function handleSubmit(e) {
         e.preventDefault();
         const userWater = { amount: userDailyNorm, weight: userWieght, time: userSportTime};
-        console.log("Water intake goal:", userDailyNorm);
+        console.log(userDailyNorm);
         localStorage.setItem("userStats", JSON.stringify([userWater]));
         setDailyNorm(userDailyNorm); 
     }
