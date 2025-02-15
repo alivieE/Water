@@ -59,19 +59,13 @@ const Calendar = ({ setPickedDate, waterActions, dailyNorm }) => {
               onClick={() => {
                 setPickedDate(day.fullDate);
               }}
-              className={`${day.percentDay !== 100 && s.fullCircle} ${
-                s.circle
-              }`}
+              className={`${day.percentDay == 100 && s.fullCircle} ${s.circle}`}
               style={{
                 ...(currentDay.getDate() ===
                   new Date(day.fullDate).getDate() && {
                   color: "#9BE1A0",
                   backgroundColor: "#323F47",
                 }),
-                // color:
-                //   currentDay.getDate() === new Date(day.fullDate).getDate()
-                //      "#9BE1A0"
-                //     : "#323F47",
               }}
             >
               <p> {day.fullDate.getDate()}</p>

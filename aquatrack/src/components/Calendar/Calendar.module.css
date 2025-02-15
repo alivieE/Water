@@ -2,7 +2,7 @@
   width: 38px;
   height: 38px;
   border-radius: 50%;
-  background-color: white;
+  background-color: #323f4720;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -12,7 +12,7 @@
   position: relative;
 }
 .fullCircle {
-  background-color: #323f4720;
+  background-color: white;
 }
 .calendarList {
   display: flex;
