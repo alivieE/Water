@@ -2,17 +2,31 @@ import React,{useState} from 'react'
 import s from './UserInfo.module.css'
 import Image from "../../assets/index";
 
-const UserInfo = ({setUserOpen,dailyNorm}) => {
+const UserInfo = ({ setUserOpen, dailyNorm, setDailyNorm }) => {
     const [userDailyNorm, setUserDailyNorm] = useState(0);
+    const [userWieght, setUserWieght] = useState(0);
+    const [userSportTime, setUserSportTime] = useState(0);
 
     function handleDailyNorm(event) {
-        setUserDailyNorm(event.target.value)
+        setUserDailyNorm(event.target.value);
+    }
+    function handleUserWeight(event) {
+        setUserWieght(event.target.value);
+    }
+    function handleSportTime(event) {
+        setUserSportTime(event.target.value);
     }
 
-    function handleSubmit()
+    function handleSubmit(e) {
+        e.preventDefault();
+        const userWater = { amount: userDailyNorm, weight: userWieght, time: userSportTime};
+        console.log("Water intake goal:", userDailyNorm);
+        localStorage.setItem("userStats", JSON.stringify([userWater]));
+        setDailyNorm(userDailyNorm); 
+    }
 
   return (
-    <div className={s.modalWindowOverlay}>
+    <div className={s.modalWindowOverlay} onSubmit={handleSubmit}>
           <form className={s.modal} >
             <p className={s.title}>Setting</p>                
             <div className={s.UserBlock}>
@@ -41,7 +55,13 @@ const UserInfo = ({setUserOpen,dailyNorm}) => {
                     </div>
                     <div>
                         <p className={s.text}>Your weight in kilograms:</p>
-                        <input className={s.input} type="text" />
+                        <input 
+                            className={s.input}
+                            type="number"
+                            required
+                            value={userWieght}
+                            onChange={handleUserWeight} 
+                        />
                     </div>
                 </div>
                 <div className={s.BlocksThird}>
@@ -51,7 +71,13 @@ const UserInfo = ({setUserOpen,dailyNorm}) => {
                     </div>
                     <div>
                         <p className={s.text}>The time of active participation in sports:</p>
-                        <input className={s.input} type="text" />
+                        <input 
+                            className={s.input}
+                            type="number"
+                            required
+                            value={userSportTime}
+                            onChange={handleSportTime} 
+                        />
                     </div>
                 </div>
                 <div className={s.BlocksFourth}>
@@ -86,10 +112,13 @@ const UserInfo = ({setUserOpen,dailyNorm}) => {
                                 <p className={s.text}>The required amount of water in liters per day:</p>
                                 <p className={s.formula}>{dailyNorm}</p>
                                 <p className={s.subTitle}>Write down how much water you will drink:</p>
-                                <input className={s.input} type="number" 
+                                <input
+                                className={s.input}
+                                type="number"
                                 required
                                 value={userDailyNorm}
-                                onChange={handleDailyNorm}/>
+                                onChange={handleDailyNorm}
+                                />
                         </div> 
                      </div>
                 </div>
@@ -103,11 +132,14 @@ const UserInfo = ({setUserOpen,dailyNorm}) => {
                     <img src={Image.close}/>
             </button>
 
-            <button className={s.SaveButton} type="submit"
-            onClick={() => {
+            <button 
+                className={s.SaveButton} 
+                type="submit"
+                onClick={(e) => {
+                handleSubmit(e);
                 setUserOpen(false);
-               }}>
-                      Save
+                }}>
+                Save
             </button>
           </form>
         </div>

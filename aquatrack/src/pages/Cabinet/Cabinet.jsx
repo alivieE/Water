@@ -45,6 +45,7 @@ const Cabinet = () => {
       <div className={s.leftSide}>
         <DayleProgressBar
           pickedDate={pickedDate}
+          dailyNorm={dailyNorm}
           filteredWaterActions={filteredWaterActions}
         ></DayleProgressBar>
         <Logotype></Logotype>
