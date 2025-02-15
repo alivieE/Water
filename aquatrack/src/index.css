@@ -170,3 +170,6 @@ input::-webkit-inner-spin-button {
 .MuiChartsLegend-root.MuiChartsLegend-column.css-nsbw82-MuiChartsLegend-root {
   display: none;
 }
+input {
+  outline: none;
+}
