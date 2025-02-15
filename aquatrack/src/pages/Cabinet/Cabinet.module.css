@@ -26,3 +26,10 @@
   min-height: 100vh;
   flex-grow: 1;
 }
+
+/* //////////////////////////// */
+
+.card {
+  height: 100vh;
+  background-color: azure;
+}

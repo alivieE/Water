@@ -173,3 +173,10 @@ input::-webkit-inner-spin-button {
 input {
   outline: none;
 }
+.swiper-slide.swiper-slide {
+  height: 100vh;
+  background-color: rgb(36, 134, 134);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

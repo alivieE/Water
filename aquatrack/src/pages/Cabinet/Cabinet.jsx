@@ -10,14 +10,15 @@ import User from "../../components/User/User";
 import WaterBlock from "../../components/WaterBlock/WaterBlock";
 import UserInfo from "../../components/UserInfo/UserInfo";
 import Calendar from "../../components/Calendar/Calendar";
-
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import { EffectCube, Pagination } from "swiper/modules";
 const Cabinet = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [userOpen, setUserOpen] = useState(false);
   const [dailyNorm, setDailyNorm] = useState(() => {
-    return localStorage.getItem("daiylnorm") || 1.5
-    
-  });  
+    return localStorage.getItem("daiylnorm") || 1.5;
+  });
   const [waterActions, setWaterAction] = useState(() => {
     const localStorageValue = JSON.parse(localStorage.getItem("waterActions"));
     return localStorageValue || [];
@@ -42,7 +43,7 @@ const Cabinet = () => {
 
   return (
     <div className={s.Section}>
-      <div className={s.leftSide}>
+      {/* <div className={s.leftSide}>
         <DayleProgressBar
           pickedDate={pickedDate}
           dailyNorm={dailyNorm}
@@ -85,7 +86,26 @@ const Cabinet = () => {
           waterActions={waterActions}
           setPickedDate={setPickedDate}
         ></Calendar>
-      </div>
+      </div> */}
+      <Swiper
+        effect={"cube"}
+        spaceBetween={50}
+        cubeEffect={{
+          shadow: true,
+          slideShadows: true,
+          shadowOffset: 20,
+          shadowScale: 0.94,
+        }}
+        modules={[EffectCube, Pagination]}
+        onSlideChange={() => console.log("slide change")}
+      >
+        <SwiperSlide style={{ width: "900px" }} className={s.card}>
+          Slide 1
+        </SwiperSlide>
+        <SwiperSlide style={{ width: "100vw" }}>Slide 2</SwiperSlide>
+        <SwiperSlide style={{ width: "100vw" }}>Slide 3</SwiperSlide>
+        <SwiperSlide style={{ width: "100vw" }}>Slide 4</SwiperSlide>
+      </Swiper>
     </div>
   );
 };
