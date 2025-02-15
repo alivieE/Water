@@ -1,10 +1,16 @@
-import React from 'react'
+import React,{useState} from 'react'
 import s from './UserInfo.module.css'
 import Image from "../../assets/index";
 
-const UserInfo = ({setUserOpen}) => {
+const UserInfo = ({setUserOpen,dailyNorm}) => {
+    const [userDailyNorm, setUserDailyNorm] = useState(0);
 
-    
+    function handleDailyNorm(event) {
+        setUserDailyNorm(event.target.value)
+    }
+
+    function handleSubmit()
+
   return (
     <div className={s.modalWindowOverlay}>
           <form className={s.modal} >
@@ -78,9 +84,12 @@ const UserInfo = ({setUserOpen}) => {
                     <div>                        
                         <div className={s.fourRow}>
                                 <p className={s.text}>The required amount of water in liters per day:</p>
-                                <p className={s.formula}>1.8L</p>
+                                <p className={s.formula}>{dailyNorm}</p>
                                 <p className={s.subTitle}>Write down how much water you will drink:</p>
-                                <input className={s.input} type="text" />
+                                <input className={s.input} type="number" 
+                                required
+                                value={userDailyNorm}
+                                onChange={handleDailyNorm}/>
                         </div> 
                      </div>
                 </div>

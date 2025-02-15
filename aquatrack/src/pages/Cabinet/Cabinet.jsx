@@ -14,6 +14,10 @@ import Calendar from "../../components/Calendar/Calendar";
 const Cabinet = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [userOpen, setUserOpen] = useState(false);
+  const [dailyNorm, setDailyNorm] = useState(() => {
+    return localStorage.getItem("daiylnorm") || 1.5
+    
+  });  
   const [waterActions, setWaterAction] = useState(() => {
     const localStorageValue = JSON.parse(localStorage.getItem("waterActions"));
     return localStorageValue || [];
@@ -35,6 +39,7 @@ const Cabinet = () => {
       seteditObj(null);
     }
   }, [isOpen]);
+
   return (
     <div className={s.Section}>
       <div className={s.leftSide}>
@@ -43,7 +48,9 @@ const Cabinet = () => {
           filteredWaterActions={filteredWaterActions}
         ></DayleProgressBar>
         <Logotype></Logotype>
-        <DayleNorm></DayleNorm>
+        <DayleNorm 
+        dailyNorm={dailyNorm}
+        setDailyNorm={setDailyNorm}></DayleNorm>
         <AddButton setIsOpen={setIsOpen}></AddButton>
         {isOpen && (
           <AddWater
@@ -68,7 +75,9 @@ const Cabinet = () => {
           waterAction={waterActions}
           filteredWaterActions={filteredWaterActions}
         ></WaterBlock>
-        {userOpen && <UserInfo setUserOpen={setUserOpen}></UserInfo>}
+        {userOpen && <UserInfo 
+        setDailyNorm={setDailyNorm}
+        setUserOpen={setUserOpen}></UserInfo>}
 
         <Calendar
           waterActions={waterActions}

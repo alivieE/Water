@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import s from "./Calendar.module.css";
 import dateFormat, { masks } from "dateformat";
 import getMonthDates from "../../helpers/getMonthDates";
+import Image from '../../assets/index'
 const Calendar = ({ setPickedDate, waterActions }) => {
   const [countMonth, setCountMonth] = useState(0);
 
@@ -36,12 +37,16 @@ const Calendar = ({ setPickedDate, waterActions }) => {
   }
   return (
     <section>
-      <div>
-        <p>Statistic</p>
-        <div style={{ display: "flex" }}>
-          <button onClick={prevMonth}>-</button>
-          <p>{dateFormat(currentMonthDates[0], "mmmm,yy")}</p>
-          <button onClick={nextMonth}>+</button>
+      <div className={s.changeBlock}>
+        <p className={s.Statistic}>Statistic</p>
+        <div  className={s.ChangeCalendar}>
+          <button onClick={prevMonth}>
+            <img src={Image.VectorToLeft}/>
+          </button>
+          <p className={s.text}>{dateFormat(currentMonthDates[0], "mmmm,yyyy")}</p>
+          <button onClick={nextMonth}>
+            <img src={Image.VectorToRight}/>
+          </button>
         </div>
       </div>
       <ul className={s.calendarList}>

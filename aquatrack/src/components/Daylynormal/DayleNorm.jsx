@@ -2,9 +2,9 @@ import React from "react";
 import s from "./DayleNorm.module.css";
 import DayleProgressBar from "../DailyProgressBar/DayleProgressBar";
 
-const dailyNorm = 1.5;
 
-const DayleNorm = () => {
+
+const DayleNorm = ({dailyNorm}) => {
   return (
     <div className={s.normal}>
       <p className={s.AmountOfWater}>{dailyNorm} L</p>

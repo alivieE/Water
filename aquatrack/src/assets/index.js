@@ -10,6 +10,8 @@ import trash from './trash.svg'
 import upload from './upload.svg'
 import Vector from './Vector.svg'
 import UserPhoto from './UserPhoto.svg'
+import VectorToLeft from './VectorToLeft.svg'
+import VectorToRight from './VectorToRight.svg'
 
 
-export default {bottle,minus,addWaterPlus,addButtonplus,close,chevron,glass,change,trash,upload,Vector,UserPhoto}
+export default {bottle,minus,addWaterPlus,addButtonplus,close,chevron,glass,change,trash,upload,Vector,UserPhoto,VectorToLeft,VectorToRight}

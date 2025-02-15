@@ -27,3 +27,26 @@
   font-weight: 400;
   font-size: 12px;
 }
+
+.text{
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.Statistic{
+  font-weight: 700;
+  font-size: 28px;
+  color: #323F47;
+}
+
+.changeBlock{
+  display: flex;
+  justify-content: space-between;
+  color: #323F47;
+}
+
+.ChangeCalendar{
+  gap: 20px;
+  align-items: center;
+  display: flex;
+}
