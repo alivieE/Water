@@ -81,6 +81,7 @@ const Cabinet = () => {
         setUserOpen={setUserOpen}></UserInfo>}
 
         <Calendar
+          dailyNorm={dailyNorm}
           waterActions={waterActions}
           setPickedDate={setPickedDate}
         ></Calendar>

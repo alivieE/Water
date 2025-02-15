@@ -8,13 +8,13 @@ const UserInfo = ({ setUserOpen, dailyNorm, setDailyNorm }) => {
   const [userSportTime, setUserSportTime] = useState(0);
 
   function handleDailyNorm(event) {
-    setUserDailyNorm(event.target.value);
+    setUserDailyNorm(Number(event.target.value));
   }
   function handleUserWeight(event) {
-    setUserWieght(event.target.value);
+    setUserWieght(Number(event.target.value));
   }
   function handleSportTime(event) {
-    setUserSportTime(event.target.value);
+    setUserSportTime(Number(event.target.value));
   }
 
   function handleSubmit(e) {

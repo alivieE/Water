@@ -3,7 +3,7 @@ import s from "./Calendar.module.css";
 import dateFormat, { masks } from "dateformat";
 import getMonthDates from "../../helpers/getMonthDates";
 import Image from '../../assets/index'
-const Calendar = ({ setPickedDate, waterActions }) => {
+const Calendar = ({ setPickedDate, waterActions, dailyNorm}) => {
   const [countMonth, setCountMonth] = useState(0);
 
   const currentDay = new Date();
@@ -25,7 +25,7 @@ const Calendar = ({ setPickedDate, waterActions }) => {
         return +action.amount + acc;
       }, 0);
 
-    const percent = Math.floor((totalWater / 1500) * 100);
+    const percent = Math.floor((totalWater / (dailyNorm*1000)) * 100);
 
     return { fullDate: date, percentDay: percent > 100 ? 100 : percent };
   });

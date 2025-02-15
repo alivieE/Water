@@ -2,11 +2,11 @@ import React, { useState } from "react";
 import dateFormat, { masks } from "dateformat";
 import s from "./DayleProgressBar.module.css";
 
-const DayleProgressBar = ({ pickedDate, filteredWaterActions }) => {
+const DayleProgressBar = ({ pickedDate, filteredWaterActions,dailyNorm }) => {
   const totalWater = filteredWaterActions.reduce((acc, action) => {
     return +action.amount + acc;
   }, 0);
-  const percent = Math.floor((totalWater / 1500) * 100);
+  const percent = Math.floor((totalWater / (dailyNorm*1000)) * 100);
   return (
     <div className={s.container}>
       <p className={s.today}> {dateFormat(pickedDate, "dd.mm")}</p>
